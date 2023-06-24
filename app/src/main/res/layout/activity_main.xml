@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="62dp"
+        android:layout_marginStart="24dp"
+        />
+
+    <ImageView
+        android:id="@+id/bung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mask"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="60dp"/>
+
+    <ImageView
+        android:id="@+id/findyourdoctor"
+        android:layout_width="248dp"
+        android:layout_height="41dp"
+        android:src="@drawable/finddoctor"
+        app:layout_constraintTop_toBottomOf="@id/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="35dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/inputtext"
+        android:background="#F6F6F6"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/findyourdoctor"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="15dp"
+        app:endIconMode="custom"
+
+        android:textColorHint="@color/grey"
+        app:endIconDrawable="@drawable/search"
+        app:boxStrokeColor="@android:color/transparent"
+        app:hintTextColor="@android:color/transparent"
+       >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search doctor,medicines etc" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridlayout"
+        app:layout_constraintTop_toBottomOf="@id/inputtext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/consultation"
+            android:layout_row="0"
+            android:layout_column="0"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dental"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginStart="36dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/heartimg"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_marginStart="38dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hospitals"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_marginStart="38dp"
+            />
+<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/medicines"
+        android:layout_row="1"
+        android:layout_column="0"
+    android:layout_marginStart="5dp"
+        />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/physician"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_marginStart="35dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/skin"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_marginStart="38dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/surgeon"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_marginStart="38dp"
+            />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/topdoctors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Top doctors"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gridlayout"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View all"
+        android:textColor="@color/blue"
+        app:layout_constraintTop_toBottomOf="@id/gridlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="38dp"
+        android:layout_marginTop="18dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/topdoctors"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="65dp"        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
